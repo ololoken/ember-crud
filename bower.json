@@ -1,0 +1,9 @@
+{
+  "name": "ember-cache",
+  "dependencies": {
+    "ember": "~1",
+    "ember-data": "~1",
+    "handlebars": "~2",
+    "moment": "~2"
+  }
+}

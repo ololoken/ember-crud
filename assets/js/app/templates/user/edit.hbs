@@ -11,19 +11,19 @@
         </div>
         <div class="line">
             <label for="avatarUrl">Choose user avatar</label>
-            {{input value=avatarUrl}}
+            {{input value=model.avatarUrl}}
         </div>
         <div class="line">
             <label for="name">User name</label>
-            {{input value=name}}
+            {{input value=model.name}}
         </div>
         <div class="line">
             <label for="email">User email</label>
-            {{input value=email}}
+            {{input value=model.email}}
         </div>
         <div class="line">
             <label for="bio">User short bio</label>
-            {{textarea value=bio}}
+            {{textarea value=model.bio}}
         </div>
         <div class="aright">
             <button class="blue btn-desktop" {{action "save"}} title="save"> ok </button>

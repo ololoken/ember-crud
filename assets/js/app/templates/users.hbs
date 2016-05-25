@@ -32,6 +32,4 @@
 
 </div>
 
-{{! this is the modal trigger, the action takes two arguments, first the action name, second the template name of the desired modal }}
-{{! the showModal action is in the ApplicationRoute }}
-<a href="#" class="about-this-demo icon-eye" {{action "showModal" "modal-demo"}}>About this demo</a>
+<a href="#" class="about-this-demo icon-eye" {{action "onlineSwitch"}}>Status: {{connectionStatus}}</a>

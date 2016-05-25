@@ -4,6 +4,7 @@ assets/css/style.css
 assets/js/app.js
 assets/js/libs.js
 assets/js/templates.js
+assets/js/libs/
 *.iml
 .idea
 tests/coverage/

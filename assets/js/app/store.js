@@ -48,8 +48,17 @@ App.ApplicationAdapter = DS.RESTAdapter.extend(new function () {
     'namespace': '',
     'cache': cache,
     'onLine': true,
+    'ajaxOptions': function (url, type, opts) {
+      return Object.assign(this._super(url, type, opts), {
+        complete: function (xhr, status) {
+          if ('success' == status) {
+            //put/update data in cache
+            cache.set(url, xhr.responseJSON);
+          }
+        }
+      });
+    },
     'ajax': function (url, method, opts) {
-      console.log(url, method, opts);
       switch (method) {
         case 'GET':
           if ((!navigator.onLine || !window._onLine || !App.get('onLine')) && cache.has(url)) {
@@ -74,8 +83,8 @@ App.ApplicationAdapter = DS.RESTAdapter.extend(new function () {
       return this._super(url, method, opts);
     },
     'handleResponse': function (status, headers, payload, requestData) {
-      //todo: add response caching
-      console.log(this, status, headers, payload, requestData);
+
+      //console.log(this, status, headers, payload, requestData);
 
       return this._super(status, headers, payload, requestData);
     }
